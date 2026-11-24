@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LME2510C dongle, 3344:1120 / 3344:2480 / 3344:1111 (decimal ids).
+     Same entries as the vendor app's res/xml/device_filter.xml. -->
+<resources>
+    <usb-device vendor-id="13124" product-id="4384" />
+    <usb-device vendor-id="13124" product-id="9344" />
+    <usb-device vendor-id="13124" product-id="4369" />
+</resources>

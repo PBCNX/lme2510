@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lme2510"
+dynamic = ["version"]
+description = "User-space driver for the LME2510C + FC8300 ISDB-T dongle (3344:1120). Our own code, no vendor code."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "The LME2510 Open Driver Authors" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = ["pyusb>=1.2"]
+
+[project.urls]
+Homepage = "https://github.com/PBCNX/lme2510"
+
+[tool.setuptools.dynamic]
+version = { attr = "lme2510.__version__" }
+
+[project.scripts]
+lme2510 = "lme2510.cli:main"
+
+[tool.setuptools]
+packages = ["lme2510"]
+

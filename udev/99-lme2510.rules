@@ -1,0 +1,12 @@
+# LME2510C + FC8300 ISDB-T dongle, both USB identities seen in the field.
+# warm (2480) is what the device enumerates as after the vendor firmware has run;
+# cold (1120) is the original mass-storage identity the vendor's P5b stage resets.
+#
+#   sudo cp 99-lme2510.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+#
+# Without it, opening the device needs root: the default usbfs permissions do not
+# let a normal user claim the interface.
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="3344", ATTR{idProduct}=="2480", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="3344", ATTR{idProduct}=="1120", MODE="0666", GROUP="plugdev", TAG+="uaccess"
